@@ -6,97 +6,115 @@
 <title>GentStyle Shop</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f5f5f5;
+font-family: Arial;
+margin:0;
+background:#f5f5f5;
 }
 
 header{
-    background:#111;
-    color:white;
-    padding:15px;
-    text-align:center;
+background:#111;
+color:white;
+text-align:center;
+padding:15px;
 }
 
 nav{
-    background:#333;
-    padding:10px;
-    text-align:center;
+background:#333;
+text-align:center;
+padding:10px;
 }
 
 nav a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:bold;
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
 }
 
 nav a:hover{
-    color:#ffd700;
+color:#ffd700;
 }
 
 .container{
-    padding:20px;
+padding:20px;
 }
 
 .category{
-    margin-bottom:40px;
+margin-bottom:40px;
 }
 
 .category h2{
-    border-left:5px solid #111;
-    padding-left:10px;
+border-left:5px solid black;
+padding-left:10px;
 }
 
 .products{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
+display:flex;
+flex-wrap:wrap;
+gap:20px;
 }
 
 .product{
-    background:white;
-    padding:15px;
-    width:200px;
-    border-radius:8px;
-    box-shadow:0 0 5px rgba(0,0,0,0.2);
-    text-align:center;
+background:white;
+padding:15px;
+width:200px;
+border-radius:8px;
+box-shadow:0 0 5px rgba(0,0,0,0.2);
+text-align:center;
 }
 
 .product img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
+width:100%;
+height:200px;
+object-fit:cover;
 }
 
 .price{
-    color:green;
-    font-size:18px;
-    font-weight:bold;
+color:green;
+font-size:18px;
+font-weight:bold;
 }
 
 button{
-    background:#111;
-    color:white;
-    border:none;
-    padding:10px;
-    margin-top:10px;
-    cursor:pointer;
-    border-radius:5px;
+background:#111;
+color:white;
+border:none;
+padding:10px;
+margin-top:10px;
+cursor:pointer;
+border-radius:5px;
 }
 
 button:hover{
-    background:#444;
+background:#444;
+}
+
+.cart{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
+
+.cart button{
+margin:3px;
+padding:5px 10px;
 }
 
 footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:10px;
-    margin-top:30px;
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
 }
+
+iframe{
+border-radius:10px;
+}
+
 </style>
 </head>
 
@@ -112,96 +130,134 @@ footer{
 <a href="#pants">Pants</a>
 <a href="#shoes">Shoes</a>
 <a href="#watches">Watches</a>
+<a href="#cart">Cart</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
 
-<!-- Shirts -->
+<!-- SHIRTS -->
 <div class="category" id="shirts">
 <h2>Shirts</h2>
+
 <div class="products">
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Casual Shirt</h3>
 <p class="price">$25</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Casual Shirt',25)">Buy Now</button>
 </div>
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Formal Shirt</h3>
 <p class="price">$35</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Formal Shirt',35)">Buy Now</button>
 </div>
 
 </div>
 </div>
 
-<!-- Pants -->
+<!-- PANTS -->
 <div class="category" id="pants">
 <h2>Pants</h2>
+
 <div class="products">
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Jeans</h3>
 <p class="price">$40</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Jeans',40)">Buy Now</button>
 </div>
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Chinos</h3>
 <p class="price">$38</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Chinos',38)">Buy Now</button>
 </div>
 
 </div>
 </div>
 
-<!-- Shoes -->
+<!-- SHOES -->
 <div class="category" id="shoes">
 <h2>Shoes</h2>
+
 <div class="products">
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Running Shoes</h3>
 <p class="price">$60</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Running Shoes',60)">Buy Now</button>
 </div>
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Formal Shoes</h3>
 <p class="price">$75</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Formal Shoes',75)">Buy Now</button>
 </div>
 
 </div>
 </div>
 
-<!-- Watches -->
+<!-- WATCHES -->
 <div class="category" id="watches">
 <h2>Watches</h2>
+
 <div class="products">
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Classic Watch</h3>
 <p class="price">$120</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Classic Watch',120)">Buy Now</button>
 </div>
 
 <div class="product">
 <img src="https://via.placeholder.com/200">
 <h3>Sport Watch</h3>
 <p class="price">$95</p>
-<button>Buy Now</button>
+<button onclick="addToCart('Sport Watch',95)">Buy Now</button>
 </div>
 
 </div>
+</div>
+
+<!-- CART -->
+<div class="category cart" id="cart">
+
+<h2>Shopping Cart</h2>
+
+<div id="cartItems"></div>
+
+<h3>Total: $<span id="total">0</span></h3>
+
+</div>
+
+<!-- CONTACT -->
+<div class="category" id="contact">
+
+<h2>Contact Information</h2>
+
+<p><b>Name:</b> Bikash Pantha</p>
+<p><b>Phone:</b> +9779800000000</p>
+<p><b>Email:</b> bikashpantha000@gmail.com</p>
+<p><b>Location:</b> Sainamaina Ranibagiya, Nepal</p>
+
+<h3>Google Map</h3>
+
+<iframe
+width="100%"
+height="300"
+src="https://www.google.com/maps?q=Sainamaina%20Ranibagiya&output=embed"
+loading="lazy">
+</iframe>
+
 </div>
 
 </div>
@@ -209,6 +265,73 @@ footer{
 <footer>
 <p>© 2026 GentStyle Shop | All Rights Reserved</p>
 </footer>
+
+<script>
+
+let cart = [];
+
+function addToCart(name,price){
+
+let item = cart.find(p => p.name === name);
+
+if(item){
+item.qty++;
+}else{
+cart.push({name:name,price:price,qty:1});
+}
+
+displayCart();
+}
+
+function displayCart(){
+
+let cartDiv = document.getElementById("cartItems");
+let total = 0;
+
+cartDiv.innerHTML="";
+
+cart.forEach((item,index)=>{
+
+total += item.price * item.qty;
+
+cartDiv.innerHTML += `
+<p>
+<b>${item.name}</b> - $${item.price}
+<button onclick="decrease(${index})">-</button>
+${item.qty}
+<button onclick="increase(${index})">+</button>
+<button onclick="removeItem(${index})">Cancel</button>
+</p>
+`;
+
+});
+
+document.getElementById("total").innerText = total;
+
+}
+
+function increase(index){
+cart[index].qty++;
+displayCart();
+}
+
+function decrease(index){
+
+if(cart[index].qty>1){
+cart[index].qty--;
+}else{
+cart.splice(index,1);
+}
+
+displayCart();
+}
+
+function removeItem(index){
+cart.splice(index,1);
+displayCart();
+}
+
+</script>
 
 </body>
 </html>
